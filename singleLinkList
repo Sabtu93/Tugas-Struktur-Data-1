@@ -1,0 +1,36 @@
+class Node {
+    constructor(data) {
+      this.data = data;
+      this.next = null;
+    }
+  }
+  
+  class LinkedList {
+    constructor() {
+      this.head = null;
+    }
+  
+    // tambahkan node ke awal list (secara otomatis terurut terbalik)
+    addAtBeginning(data) {
+      const newNode = new Node(data);
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+  
+    // tampilkan semua data dalam list
+    printList() {
+      let current = this.head;
+      while (current) {
+        console.log(current.data);
+        current = current.next;
+      }
+    }
+  }
+  
+  // Contoh penggunaan
+  const list = new LinkedList();
+  list.addAtBeginning(100);
+  list.addAtBeginning(200);
+  list.addAtBeginning(300);
+  
+  list.printList();
